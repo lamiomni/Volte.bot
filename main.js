@@ -14,13 +14,14 @@ app.on('sticker', (ctx) => ctx.reply('👍'))
 app.hears('pikachu', (ctx) => ctx.reply('Wesh!!'))
 app.hears('testdb', (ctx) => 
 {
-    sequelize
+    ctx.reply('Unimplemented')
+    /*sequelize
         .authenticate()
         .then(() => {
-            ctx.reply('Connection has been established successfully.');
+            ctx.reply('Connection has been established successfully.')
         })
         .catch(err => {
-            ctx.reply('Unable to connect to the database:', err);
-        });
+            ctx.reply('Unable to connect to the database:', err)
+        })*/
 })
 app.startPolling()
