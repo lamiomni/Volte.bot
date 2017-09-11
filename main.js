@@ -9,4 +9,5 @@ app.command('start', ({ from, reply }) => {
 
 app.hears('hi', (ctx) => ctx.reply('Hey there!'))
 app.on('sticker', (ctx) => ctx.reply('👍'))
+app.hears('pikachu', (ctx) => ctx.reply('Wesh!!'))
 app.startPolling()
