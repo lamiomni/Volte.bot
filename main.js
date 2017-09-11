@@ -1,8 +1,8 @@
 const Telegraf = require('telegraf')
-const Sequelize = require('sequelize');
+//const Sequelize = require('sequelize')
 
 const app = new Telegraf(process.env.BOT_TOKEN)
-const sequelize = new Sequelize(process.env.DATABASE_URL)
+//const sequelize = new Sequelize(process.env.DATABASE_URL)
 
 app.command('start', ({ from, reply }) => {
     console.log('start', from)
