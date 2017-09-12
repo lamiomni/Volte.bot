@@ -2,6 +2,12 @@ const Telegraf = require('telegraf')
 const Sequelize = require('sequelize')
 
 const app = new Telegraf(process.env.BOT_TOKEN)
+
+bot.telegram.getMe().then((bot_informations) => {
+    bot.options.username = bot_informations.username;
+    console.log("Server has initialized bot nickname. Nick: "+bot_informations.username);
+});
+
 const sequelize = new Sequelize(process.env.DATABASE_URL, { 
     dialect:'postgres',
     dialectOptions: { ssl: true }
@@ -26,4 +32,4 @@ app.hears('testdb', (ctx) =>
             ctx.reply('Unable to connect to the database:' + err)
         })
 })
-//app.startPolling()
+app.startPolling()
