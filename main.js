@@ -12,8 +12,18 @@ app.command('start', ({ from, reply }) => {
     return reply('Welcome!')
 })
 
-app.hears(/hi/i, (ctx) => ctx.reply('Hey there!'))
+// Auth middleware
+app.use((ctx, next) => {
+    ctx.state.role = getUserRole(ctx.message) 
+    return next()
+  })
+  
+// On
+app.on('text', (ctx) => ctx.reply(`Hello ${ctx.state.role}`))
 app.on('sticker', (ctx) => ctx.reply('👍'))
+
+// Hears
+app.hears(/hi/i, (ctx) => ctx.reply('Hey there!'))
 app.hears(/pikachu/i, (ctx) => ctx.reply('Wesh!!'))
 app.hears(/testdb/i, (ctx) => 
 {
