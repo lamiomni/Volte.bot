@@ -7,19 +7,14 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: { ssl: true }
 })
 
-app.command('start', ({ from, reply }) => {
+// Command
+app.command(/start/i, ({ from, reply }) => {
     console.log('start', from)
     return reply('Welcome!')
 })
-
-// Auth middleware
-app.use((ctx, next) => {
-    ctx.state.role = getUserRole(ctx.message) 
-    return next()
-  })
+app.command(/popcorn/i, (ctx) => ctx.reply('🍿'))
   
 // On
-app.on('text', (ctx) => ctx.reply(`Hello ${ctx.state.role}`))
 app.on('sticker', (ctx) => ctx.reply('👍'))
 
 // Hears
