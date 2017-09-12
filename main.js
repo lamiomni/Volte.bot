@@ -3,7 +3,7 @@ const Sequelize = require('sequelize')
 
 const app = new Composer()
 
-app.telegram.getMe().then((bot_informations) => {
+app.getMe().then((bot_informations) => {
     app.options.username = bot_informations.username;
     console.log("Server has initialized bot nickname. Nick: "+bot_informations.username);
 });
