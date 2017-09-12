@@ -12,10 +12,10 @@ app.command('start', ({ from, reply }) => {
     return reply('Welcome!')
 })
 
-app.hears('hi', (ctx) => ctx.reply('Hey there!'))
+app.hears(/hi/i, (ctx) => ctx.reply('Hey there!'))
 app.on('sticker', (ctx) => ctx.reply('👍'))
-app.hears('pikachu', (ctx) => ctx.reply('Wesh!!'))
-app.hears('testdb', (ctx) => 
+app.hears(/pikachu/i, (ctx) => ctx.reply('Wesh!!'))
+app.hears(/testdb/i, (ctx) => 
 {
     sequelize
         .authenticate()
@@ -26,4 +26,5 @@ app.hears('testdb', (ctx) =>
             ctx.reply('Unable to connect to the database:' + err)
         })
 })
+
 module.exports = app
