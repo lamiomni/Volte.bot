@@ -20,7 +20,7 @@ app.on('sticker', (ctx) => ctx.reply('👍'))
 // Hears
 app.hears(/hi/i, (ctx) => ctx.reply('Hey there!'))
 app.hears(/pikachu/i, (ctx) => ctx.reply('Wesh!!'))
-bot.hears(/random (.+)/, ({ match, ctx }) => ctx.replyWithPhoto('http://loremflickr.com/320/240/' + match[1], {caption: 'random ' + match[1]}))
+app.hears(/random (.+)/i, ({ match, ctx }) => ctx.replyWithPhoto('http://loremflickr.com/320/240/' + match[1], {caption: 'random ' + match[1]}))
 app.hears(/testdb/i, (ctx) => 
 {
     sequelize
