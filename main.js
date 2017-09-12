@@ -1,7 +1,7 @@
-const Telegraf = require('telegraf')
+const { Composer } = require('micro-bot');
 const Sequelize = require('sequelize')
 
-const app = new Telegraf(process.env.BOT_TOKEN)
+const app = new Composer()
 
 app.telegram.getMe().then((bot_informations) => {
     app.options.username = bot_informations.username;
@@ -32,4 +32,4 @@ app.hears('testdb', (ctx) =>
             ctx.reply('Unable to connect to the database:' + err)
         })
 })
-app.startPolling()
+module.exports = app
