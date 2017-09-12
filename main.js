@@ -2,12 +2,6 @@ const { Composer } = require('micro-bot');
 const Sequelize = require('sequelize')
 
 const app = new Composer()
-
-app.getMe().then((bot_informations) => {
-    app.options.username = bot_informations.username;
-    console.log("Server has initialized bot nickname. Nick: "+bot_informations.username);
-});
-
 const sequelize = new Sequelize(process.env.DATABASE_URL, { 
     dialect:'postgres',
     dialectOptions: { ssl: true }
