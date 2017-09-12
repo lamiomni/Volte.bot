@@ -8,11 +8,11 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 })
 
 // Command
-app.command(/start/i, ({ from, reply }) => {
+app.command('start', ({ from, reply }) => {
     console.log('start', from)
     return reply('Welcome!')
 })
-app.command(/popcorn/i, (ctx) => ctx.reply('🍿'))
+app.command('popcorn', (ctx) => ctx.reply('🍿'))
   
 // On
 app.on('sticker', (ctx) => ctx.reply('👍'))
