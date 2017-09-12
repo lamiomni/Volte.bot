@@ -7,8 +7,6 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: { ssl: true }
 })
 
-app.startWebhook('/secret-path', null, 3000)
-
 app.command('start', ({ from, reply }) => {
     console.log('start', from)
     return reply('Welcome!')
