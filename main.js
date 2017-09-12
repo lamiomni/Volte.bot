@@ -7,6 +7,8 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: { ssl: true }
 })
 
+app.startWebhook('/secret-path', null, 3000)
+
 app.command('start', ({ from, reply }) => {
     console.log('start', from)
     return reply('Welcome!')
@@ -26,4 +28,4 @@ app.hears('testdb', (ctx) =>
             ctx.reply('Unable to connect to the database:' + err)
         })
 })
-app.startPolling()
+//app.startPolling()
