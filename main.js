@@ -3,8 +3,8 @@ const Sequelize = require('sequelize')
 
 const app = new Telegraf(process.env.BOT_TOKEN)
 
-bot.telegram.getMe().then((bot_informations) => {
-    bot.options.username = bot_informations.username;
+app.telegram.getMe().then((bot_informations) => {
+    app.options.username = bot_informations.username;
     console.log("Server has initialized bot nickname. Nick: "+bot_informations.username);
 });
 
