@@ -26,4 +26,4 @@ app.hears('testdb', (ctx) =>
             ctx.reply('Unable to connect to the database:' + err)
         })
 })
-//app.startPolling()
+app.startPolling()
