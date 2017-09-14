@@ -4,6 +4,7 @@
   "description": "A multipurpose Telegram bot made in node.js",
   "main": "main.js",
   "dependencies": {
+    "http": "0.0.0",
     "micro-bot": "^1.3.4",
     "pg": "^7.3.0",
     "sequelize": "^4.8.3",
@@ -12,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "micro-bot -p ${PORT}"
+    "start": "micro-bot -d ${NOW_URL}"
   },
   "repository": {
     "type": "git",
